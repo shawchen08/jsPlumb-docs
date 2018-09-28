@@ -1,6 +1,6 @@
 # jsPlumb 文档翻译
 
-[官方文档](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
+只翻译了部分常用的，更详细的请看[官方文档](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
 
 [jsPlumb](https://github.com/jsplumb/jsplumb) 是一个在元素之间创建可视化连接的 js 库，并内置拖拽功能，兼容 IE9+（最后一个兼容 IE8 的版本是 1.7.10）
 
