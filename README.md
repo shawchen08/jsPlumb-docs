@@ -1,4 +1,4 @@
-# jsPlumb 文档翻译
+# jsPlumb 文档
 
 只翻译了部分常用的，更详细的请看[官方文档](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
 
@@ -171,17 +171,17 @@ overlays: [['Arrow', { location: 0.7 }, arrowCommon], ['Arrow', { location: 0.3,
 连接线类型，默认 `Bezier`
 
 - `Straight`: 直线连接，可用属性：
-  - `stub`: `Integer | Array` 连线两端短截线的最小长度。`Integer`--为连接的两端赋予同样的值，`[Integer, Integer]`--分别为起点、中点赋值，默认 0
+  - `stub`: `Integer | Array` 连线两端短截线的最小长度。`Integer`--为连接的两端赋予同样的值，`[Integer, Integer]`--分别为起点、终点赋值，默认 0
   - `gap`: `Integer | Array` 连线两端和端点（endpoint）所在的元素之间的间隙，与 `stub`，可以一起赋值也可以分别赋值，默认 0
 - `Flowchart`: 折线连接，可用属性：
-  - `stub`: `Integer | Array` 连线两端短截线的最小长度。`Integer`--为连接的两端赋予同样的值，`[Integer, Integer]`--分别为起点、中点赋值，默认 30
+  - `stub`: `Integer | Array` 连线两端短截线的最小长度。`Integer`--为连接的两端赋予同样的值，`[Integer, Integer]`--分别为起点、终点赋值，默认 30
   - `gap`: `Integer | Array` 连线两端和端点（endpoint）所在的元素之间的间隙，与 `stub`，可以一起赋值也可以分别赋值，默认 0
   - `cornerRadius`: `Number` 连线转向处的圆角，默认 0
   - `alwaysRespectStubs`: `Boolean` true--固定短截线长度；false--当两个元件彼此非常接近（小于两个短截线的总和），则调整短截线。默认 false
   - `midpoint`: `Number` 设置连线的中点位置，默认 0.5
 - `Bezier`: Bezier 曲线连接，可用属性：
   - `curviness`: `Number` 曲率，值越大，弯曲程度越大，默认 150
-  - `stub`: `Integer | Array` 连线两端短截线的最小长度。`Integer`--为连接的两端赋予同样的值，`[Integer, Integer]`--分别为起点、中点赋值，默认 0（实际使用没发现有什么用）
+  - `stub`: `Integer | Array` 连线两端短截线的最小长度。`Integer`--为连接的两端赋予同样的值，`[Integer, Integer]`--分别为起点、终点赋值，默认 0（实际使用没发现有什么用）
 - `StateMachine`: 二次 Bezier 曲线连接，可用属性：
   - `curviness`: `Number` 曲率，值越大，弯曲程度越大，默认 10
   - `margin`: `Integer` 连线两端和端点（endpoint）所在的元素之间的间隙，默认 5
@@ -350,6 +350,7 @@ Connector: ['Flowchart', { stub: [10, 20], gap: 10, cornerRadius: 5 }]
   - `uuids`: `Array`，`[source, target]`，source 和 target 的合体
   - `type`: `String`，自定义的类型（通过`registerConnectionType(id, options)`注册的）
   - `connector`: `String`，连接类型，参考[Connector](#to-connector)
+  - 连线的相关配置都可以在此使用（比如 overlays）
 
 ### deleteConnection(connection)
 
@@ -457,3 +458,9 @@ Connector: ['Flowchart', { stub: [10, 20], gap: 10, cornerRadius: 5 }]
 清空指定元素：属于子元素的所有端点和连接，以及子元素本身，保留属于元素本身的端点和连接。
 
 - `el`: `String | Element` 选择器或节点
+
+### reset(doNotUnbindInstanceEventListeners)
+
+清空所有端点、连接及事件。
+
+- `doNotUnbindInstanceEventListeners`: `Boolean` 若设为 true，事件绑定不会被移除
