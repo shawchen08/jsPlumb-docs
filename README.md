@@ -350,6 +350,7 @@ Connector: ['Flowchart', { stub: [10, 20], gap: 10, cornerRadius: 5 }]
   - `uuids`: `Array`，`[source, target]`，source 和 target 的合体
   - `type`: `String`，自定义的类型（通过`registerConnectionType(id, options)`注册的）
   - `connector`: `String`，连接类型，参考[Connector](#to-connector)
+  - `editable`: `Boolean`，是否可拆卸（用鼠标），默认 `true`
   - 连线的相关配置都可以在此使用（比如 overlays）
 
 ### deleteConnection(connection)
