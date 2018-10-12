@@ -1,4 +1,4 @@
-# jsPlumb 文档
+# jsPlumb 文档翻译
 
 只翻译了部分常用的，更详细的请看[官方文档](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
 
